@@ -12,7 +12,6 @@ Este projeto consiste no desenvolvimento de um simulador que representa o proces
 - `RelogioSimulado.java` → Controle de tempo da simulação.
 - `EstatisticasSimulacao.java` → Geração de estatísticas de desempenho.
 - `Aterro.java` → Armazena o lixo final coletado.
-- `logs/` → Pasta (se aplicável) onde os logs podem ser armazenados.
 
 ## ✅ Funcionalidades
 
