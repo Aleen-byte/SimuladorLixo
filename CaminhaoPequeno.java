@@ -30,7 +30,7 @@ public class CaminhaoPequeno {
         System.out.println("[" + getHoraSimulada() + "] Caminhão " + id + " chegou na zona " + zona.getNome());
         cargaAtual = zona.coletarLixo(capacidade);
 
-        int tempoColeta = 8 + (int)(Math.random() * 4);
+        int tempoColeta = 4 + (int)(Math.random() * 3);
         Thread.sleep(tempoColeta * 100); // Simulação em tempo real
         RelogioSimulado.avancarTempo(tempoColeta);
         minutosAcumulados += tempoColeta;
@@ -71,7 +71,4 @@ public class CaminhaoPequeno {
         return cargaAtual;
     }
 
-    public int getMinutosAcumulados() {
-        return minutosAcumulados;
-    }
 }

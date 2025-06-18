@@ -40,7 +40,7 @@ public class EstacaoTransferencia {
         if (caminhao != null) {
             // Tempo de descarregamento (2-5 minutos)
             int tempoDescarregar = 2 + (int)(Math.random() * 4);
-            Thread.sleep(tempoDescarregar * 100); // reduzir para testes (tempo real seria *1000)
+            Thread.sleep(tempoDescarregar * 1000); // reduzir para testes (tempo real seria *1000)
             RelogioSimulado.avancarTempo(tempoDescarregar);
 
             receberLixo(caminhao.getCargaAtual());
@@ -54,7 +54,7 @@ public class EstacaoTransferencia {
 
             synchronized (lock) {
                 emDescarregamento = false;
-                lock.notifyAll(); // acorda outros que estiverem esperando
+                lock.notifyAll(); // chama outros que estiverem esperando
             }
         }
     }

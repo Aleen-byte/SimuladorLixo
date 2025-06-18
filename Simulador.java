@@ -26,11 +26,11 @@ public class Simulador {
         this.caminhoesGrandes = new Lista<>();
 
         // 3. Configura as zonas de coleta
-        this.zonaNorte = new Zona("Norte",200);
-        this.zonaSul = new Zona("Sul",150);
-        this.zonaLeste = new Zona("Leste",100);
-        this.zonaSudeste = new Zona("Sudeste",160);
-        this.zonaCentro = new Zona("Centro",170);
+        this.zonaNorte = new Zona("Norte",50);
+        this.zonaSul = new Zona("Sul",50);
+        this.zonaLeste = new Zona("Leste",60);
+        this.zonaSudeste = new Zona("Sudeste",60);
+        this.zonaCentro = new Zona("Centro",70);
 
         // 4. Adiciona caminhões pequenos (1 para cada zona)
         adicionarCaminhoesPequenos(zonaNorte, zonaSul, zonaLeste, zonaSudeste, zonaCentro);
