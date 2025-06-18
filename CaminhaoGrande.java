@@ -38,7 +38,7 @@ public class CaminhaoGrande {
 
             // 2. Ir para o aterro
             System.out.println("[" + getHoraSimulada() + "] - Caminhão Grande " + id + " indo para o aterro");
-            int tempoViagem = 10 + (int)(Math.random() * 6); // 10-15 minutos
+            int tempoViagem = 10 + (int)(Math.random() * 3); // 10-15 minutos
             Thread.sleep(tempoViagem * 100);
             RelogioSimulado.avancarTempo(tempoViagem);
             minutosAcumuladosCG += tempoViagem;
@@ -58,7 +58,7 @@ public class CaminhaoGrande {
 
             // 4. Voltar para estação
             System.out.println("[" + getHoraSimulada() + "] - Caminhão Grande " + id + " voltando para estação");
-            int tempoVolta = 10 + (int)(Math.random() * 6); // 10-15 minutos
+            int tempoVolta = 10 + (int)(Math.random() * 3); // 10-15 minutos
             Thread.sleep(tempoVolta * 100);
             RelogioSimulado.avancarTempo(tempoVolta);
             minutosAcumuladosCG += tempoVolta;
@@ -73,11 +73,4 @@ public class CaminhaoGrande {
         }
     }
 
-    public int getMinutosAcumulados() {
-        return minutosAcumuladosCG;
-    }
-
-    public int getId() {
-        return id;
-    }
 }

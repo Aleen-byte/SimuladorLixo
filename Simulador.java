@@ -10,7 +10,8 @@ public class Simulador {
     private final Zona zonaNorte;
     private final Zona zonaSul;
     private final Zona zonaLeste;
-    private final Zona zonaOeste;
+    private final Zona zonaSudeste;
+    private final Zona zonaCentro;
     private final Aterro aterro;
 
     public Simulador() {
@@ -25,13 +26,14 @@ public class Simulador {
         this.caminhoesGrandes = new Lista<>();
 
         // 3. Configura as zonas de coleta
-        this.zonaNorte = new Zona("Norte",100);
-        this.zonaSul = new Zona("Sul",50);
-        this.zonaLeste = new Zona("Leste",10);
-        this.zonaOeste = new Zona("Oeste",60);
+        this.zonaNorte = new Zona("Norte",200);
+        this.zonaSul = new Zona("Sul",150);
+        this.zonaLeste = new Zona("Leste",100);
+        this.zonaSudeste = new Zona("Sudeste",160);
+        this.zonaCentro = new Zona("Centro",170);
 
         // 4. Adiciona caminhões pequenos (1 para cada zona)
-        adicionarCaminhoesPequenos(zonaNorte, zonaSul, zonaLeste, zonaOeste);
+        adicionarCaminhoesPequenos(zonaNorte, zonaSul, zonaLeste, zonaSudeste, zonaCentro);
 
         // 5. Adiciona caminhões grandes (2 inicialmente)
         caminhoesGrandes.adicionar(new CaminhaoGrande(1, estacao, aterro));
@@ -41,7 +43,7 @@ public class Simulador {
     }
 
     private void adicionarCaminhoesPequenos(Zona... zonas) {
-        int[] capacidades = {4, 8, 10}; // Capacidades disponíveis
+        int[] capacidades = {2, 4, 8, 10}; // Capacidades disponíveis
         int idBase = 1;
 
         for (Zona zona : zonas) {
@@ -110,7 +112,8 @@ public class Simulador {
             int lixoTotalRestante = zonaNorte.getLixoRestante()
                     + zonaSul.getLixoRestante()
                     + zonaLeste.getLixoRestante()
-                    + zonaOeste.getLixoRestante();
+                    + zonaSudeste.getLixoRestante()
+                    + zonaCentro.getLixoRestante();
 
             EstatisticasSimulacao.setLixoRestanteNasZonas(lixoTotalRestante);
 
