@@ -24,5 +24,5 @@ Este projeto consiste no desenvolvimento de um simulador que representa o proces
 
 ## Documentação 
 
-- `Simulador_Documento_Git.pdf` →
+- `Simulador_Documento_Git.pdf` 
 
